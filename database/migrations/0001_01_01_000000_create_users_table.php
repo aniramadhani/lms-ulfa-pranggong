@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('role', ['admin', 'teacher', 'student'])->default('student');
+            $table->string('class_room')->nullable(); // Untuk Siswa
+            $table->string('homeroom')->nullable();   // Untuk Guru (Wali Kelas)
+            $table->string('specialty')->nullable();  // Untuk Guru (Mapel)
             $table->rememberToken();
             $table->timestamps();
         });

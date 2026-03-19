@@ -22,6 +22,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role',
+        'class_room', // Tambah ini
+        'homeroom',   // Tambah ini
+        'specialty',  // Tambah ini
     ];
 
     /**

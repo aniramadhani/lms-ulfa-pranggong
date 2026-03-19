@@ -11,6 +11,11 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
+
+    // Daftarkan nama panggilan 'role' untuk satpam kita
+        $middleware->alias([
+            'role' => \App\Http\Middleware\RoleMiddleware::class,
+        ]);
         //
     })
     ->withExceptions(function (Exceptions $exceptions): void {
